@@ -1,5 +1,3 @@
-import { serchImg } from 'components/Searchbar/Searchbar';
-
 const baseURL = 'https://pixabay.com/api/';
 const apiKey = '33135653-4734ab6feb6e20c316e4b7aea';
 
