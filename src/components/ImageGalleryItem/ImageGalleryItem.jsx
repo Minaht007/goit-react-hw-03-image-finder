@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { ModalImg } from 'components/Modal/Modal';
-
+import Style from './ImageGalleryItem.module.css';
 export class ImageGalleryItem extends Component {
   state = {
     isModalOpen: false,
@@ -14,7 +14,10 @@ export class ImageGalleryItem extends Component {
     const { isModalOpen } = this.state;
     return (
       <>
-        <li onClick={this.handlTogleModal}>
+        <li
+          className={Style.ImageGalleryItem_image}
+          onClick={this.handlTogleModal}
+        >
           <img src={photo.previewURL} alt={photo.tags} />
         </li>
         {isModalOpen && (
