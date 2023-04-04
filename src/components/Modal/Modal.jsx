@@ -8,7 +8,12 @@ export class ModalImg extends Component {
     const { largPhoto, closeModal } = this.props;
     return createPortal(
       <div className={(Style.Modal, Style.Overlay)}>
-        <img src={largPhoto} alt={largPhoto} onClick={() => closeModal()} />
+        <img
+          src={largPhoto}
+          alt={largPhoto}
+          onClick={() => closeModal()}
+          onKeyDown={() => closeModal()}
+        />
       </div>,
       modalRoot
     );

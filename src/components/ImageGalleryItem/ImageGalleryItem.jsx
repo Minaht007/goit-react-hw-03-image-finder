@@ -9,6 +9,11 @@ export class ImageGalleryItem extends Component {
   handlTogleModal = () => {
     this.setState(({ isModalOpen }) => ({ isModalOpen: !isModalOpen }));
   };
+  handlKeyPress = evt => {
+    if (this.state) {
+      this.setState(({ isModalOpen }) => ({ isModalOpen: !isModalOpen }));
+    }
+  };
   render() {
     const { photo, largeImageURL } = this.props;
     const { isModalOpen } = this.state;
@@ -16,14 +21,15 @@ export class ImageGalleryItem extends Component {
       <>
         <li
           className={Style.ImageGalleryItem_image}
-          onClick={this.handlTogleModal}
+          onClick={this.handlKeyPress}
+          onKeyDown={this.handlKeyPress}
         >
           <img src={photo.previewURL} alt={photo.tags} />
         </li>
         {isModalOpen && (
           <ModalImg
             largPhoto={largeImageURL}
-            closeModal={this.handlTogleModal}
+            closeModal={(this.handlTogleModal, this.handlKeyPress)}
           />
         )}
       </>
