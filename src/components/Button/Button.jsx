@@ -1,4 +1,3 @@
-import Style from '../Style/Style.module.css';
 export default function Buttom({ click }) {
   return (
     <button type="button" onClick={() => click()}>
